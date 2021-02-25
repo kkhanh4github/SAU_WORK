@@ -1,4 +1,4 @@
-# SAU_WORK
+# SAU_OS_LAB
 This course was taught in Summer semester in 2019.<br/>
 The repository has the course materials and along side with assignments and solutions.<br/>
 All those are credited assignments given durring the semester work.<br/>
