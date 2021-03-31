@@ -1,0 +1,137 @@
+
+CREATE (Asghar:player{name: "Asghar Afghan", YOB: 1985, POB: "Paktia"}) 
+CREATE (Nawroz:player{name: "Nawroz Mangal", YOB: 1984, POB: "Khost"}) 
+CREATE (Sami:player{name: "Samiullah Shinwari", YOB: 1986, POB: "Nangarhar"}) 
+CREATE (Afsar:player{name: "Afsar Zazai", YOB: 1993, POB: "Paktika"}) 
+CREATE (Mujeeb:player{name: "Mujeeb Rahman", YOB: 1995, POB: "Khost"}) 
+CREATE (Shafaq:player{name: "Shafiqullah Shafaq", YOB: 1989, POB: "Logar"}) 
+CREATE (Nabi:player{name: "Mohammad Nabi", YOB: 1989, POB: "Logar"}) 
+CREATE (Rashid:player{name: "Rashid Khan", YOB: 1994, POB: "Nangarhar"}) 
+CREATE (Afg:Country{name:"Afghanistan"})
+
+Match (n) return n
+
+MATCH (a:player), (b:Country) WHERE a.name = "Asghar Afghan" AND b.name = "Afghanistan" 
+CREATE (a)-[r: BATSMAN_OF]->(b) 
+RETURN a,b;
+MATCH (a:player), (b:Country) WHERE a.name = "Nawroz Mangal" AND b.name = "Afghanistan" 
+CREATE (a)-[r: BATSMAN_OF]->(b) 
+RETURN a,b;
+MATCH (a:player), (b:Country) WHERE a.name = "Samiullah Shinwari" AND b.name = "Afghanistan" 
+CREATE (a)-[r: BATSMAN_OF]->(b) 
+RETURN a,b;
+MATCH (a:player), (b:Country) WHERE a.name = "Afsar Zazai" AND b.name = "Afghanistan" 
+CREATE (a)-[r: BATSMAN_OF]->(b) 
+RETURN a,b;
+MATCH (a:player), (b:Country) WHERE a.name = "Mujeeb Rahman" AND b.name = "Afghanistan" 
+CREATE (a)-[r: BATSMAN_OF]->(b) 
+RETURN a,b;
+MATCH (a:player), (b:Country) WHERE a.name = "Shafiqullah Shafaq" AND b.name = "Afghanistan" 
+CREATE (a)-[r: BATSMAN_OF]->(b) 
+RETURN a,b;
+MATCH (a:player), (b:Country) WHERE a.name = "Mohammad Nabi" AND b.name = "Afghanistan" 
+CREATE (a)-[r: BATSMAN_OF]->(b) 
+RETURN a,b;
+MATCH (a:player), (b:Country) WHERE a.name = "Rashid Khan" AND b.name = "Afghanistan" 
+CREATE (a)-[r: BATSMAN_OF]->(b) 
+RETURN a,b;
+
+
+
+MATCH (a:player), (b:Country) WHERE a.name = "" AND b.name = "Afghanistan" 
+CREATE (a)-[r: BATSMAN_OF]->(b) 
+RETURN a,b;
+
+
+
+
+CREATE (Sachin:player{name: "Sachin Tendulkar", YOB: 1985, POB: "Mumbai"}) 
+CREATE (Sewaq:player{name: "Varendar Sewaq", YOB: 1984, POB: "Himachal"}) 
+CREATE (Dhoni:player{name: "M.S Dhoni", YOB: 1986, POB: "UP"}) 
+CREATE (Yuvraj:player{name: "Yuraj Singh", YOB: 1993, POB: "Panjab"}) 
+CREATE (Gautam:player{name: "Gautam Gambhir", YOB: 1995, POB: "Assam"}) 
+CREATE (Sarfaraz:player{name: "Sarfaraz Ahmad", YOB: 1989, POB: "Bihar"}) 
+CREATE (Raina:player{name: "Suresh Raina", YOB: 1989, POB: "Shimla"}) 
+CREATE (Khalil:player{name: "Khalil Ahmad", YOB: 1994, POB: "Lacknow"}) 
+CREATE (Ind:Country{name:"India"})
+
+Match (n) return n
+ 
+
+
+MATCH (a:player), (b:Country) WHERE a.name = "Sachin Tendulkar" AND b.name = "India" 
+CREATE (a)-[r: BATSMAN_OF]->(b) 
+RETURN a,b; 
+MATCH (a:player), (b:Country) WHERE a.name = "Varendar Sewaq" AND b.name = "India" 
+CREATE (a)-[r: BATSMAN_OF]->(b) 
+RETURN a,b;
+MATCH (a:player), (b:Country) WHERE a.name = "M.S Dhoni" AND b.name = "India" 
+CREATE (a)-[r: BATSMAN_OF]->(b) 
+RETURN a,b ;
+MATCH (a:player), (b:Country) WHERE a.name = "Yuraj Singh" AND b.name = "India" 
+CREATE (a)-[r: BATSMAN_OF]->(b) 
+RETURN a,b; 
+MATCH (a:player), (b:Country) WHERE a.name = "Gautam Gambhir" AND b.name = "India" 
+CREATE (a)-[r: BATSMAN_OF]->(b) 
+RETURN a,b; 
+MATCH (a:player), (b:Country) WHERE a.name = "Sarfaraz Ahmad" AND b.name = "India" 
+CREATE (a)-[r: BATSMAN_OF]->(b) 
+RETURN a,b; 
+MATCH (a:player), (b:Country) WHERE a.name = "Suresh Raina" AND b.name = "India" 
+CREATE (a)-[r: BATSMAN_OF]->(b) 
+RETURN a,b; 
+MATCH (a:player), (b:Country) WHERE a.name = "Khalil Ahmad" AND b.name = "India" 
+CREATE (a)-[r: BATSMAN_OF]->(b) 
+RETURN a,b;
+
+
+
+MERGE (Sachin:player{name: "Sachin Tendulkar", YOB: 1985, POB: "Mumbai"})
+RETURN Sachin 
+
+
+MERGE (Jadeja:player {name: "Ravindra Jadeja", YOB: 1988, POB: "NavagamGhed"}) 
+ON CREATE SET Jadeja.isCreated = "true" 
+ON MATCH SET Jadeja.isFound = "true" 
+RETURN Jadeja 
+
+
+MERGE (Ashwin:player {name: "Ravichandern Ashwin", YOB: 1984, POB: "Gurgaon"}) 
+ON CREATE SET Jadeja.isCreated = "true" 
+ON MATCH SET Jadeja.isFound = "true" 
+RETURN Jadeja 
+
+MERGE (Dhawan:player{name: "shikar Dhawan", YOB: 1985, POB: "Delhi"}) 
+ON CREATE SET Dhawan.isCreated = "true" 
+ON MATCH SET Dhawan.isFound = "true" 
+RETURN Dhawan
+
+
+Adding a Property:
+
+MATCH (Dhawan:player{name: "shikar Dhawan", YOB: 1985, POB: "Delhi"}) 
+SET Dhawan.highestscore = 187 
+RETURN Dhawan
+
+
+
+
+Removing a Property:
+
+MATCH (Jadeja:player {name: "Ravindra Jadeja", YOB: 1988, POB: "NavagamGhed"}) 
+SET Jadeja.POB = NULL 
+RETURN Jadeja 
+
+
+Setting Multiple Properties:
+
+MATCH (Jadeja:player {name: "Ravindra Jadeja", YOB: 1988})  
+SET Jadeja.POB: "NavagamGhed", Jadeja.HS = "90" 
+RETURN Jadeja
+
+
+SET MULTIPLE labels:
+
+MATCH (Ishant {name: "Ishant Sharma", YOB: 1988, POB: "Delhi"}) 
+SET Ishant: player:person 
+RETURN Ishant 
