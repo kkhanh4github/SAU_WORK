@@ -1,3 +1,4 @@
+Deep learning notes: https://marcossilva.github.io/en/index.html
 
 CREATE (Asghar:player{name: "Asghar Afghan", YOB: 1985, POB: "Paktia"}) 
 CREATE (Nawroz:player{name: "Nawroz Mangal", YOB: 1984, POB: "Khost"}) 
